@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Contador de Acesso - Singleton</title>
+	<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+		
+		<style>
+			.body {
+				margin-left: 10px;
+			}
+			.text-quant {
+				margin-left: 5px;
+				font-weight: 700;
+				color: green;
+			}
+		</style>
+</h:head>
+
+<h:body styleClass="body" onload="#{contadorMB.incrementar()}">
+	<h:form>
+		<h:outputLabel value="Contador de Acesso utilizando um bean Singleton" />
+		<hr />
+		<h:outputLabel value="Quantidade: " />
+		<h:outputText styleClass="text-quant" value="#{contadorMB.contador}" />
+	</h:form>
+</h:body>
+</html>

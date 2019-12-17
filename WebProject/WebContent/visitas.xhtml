@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Controle de Visitas - Stateful</title>
+	<style>
+.text-input {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.text-resp {
+	margin-left: 23px;
+	color: red
+}
+
+.body {
+	margin-left: 10px;
+}
+
+.table {
+	width: 200px !important;
+	margin-top:20px!important;
+}
+</style>
+
+	<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+</h:head>
+
+
+<h:body styleClass="body">
+	<h:form>
+		<h:outputLabel value="Cadastro de Visitas utilizando um bean Stateful" />
+		<hr />
+		<h:outputLabel value="Nome de Visitante: " />
+		<h:inputText value="#{visitasMB.visitante}" styleClass="text-input" />
+		<h:commandButton action="#{visitasMB.entrouVisita}" value="Incluir"
+			styleClass="btn btn-default btn-sm" />
+
+		<br />
+		<h:dataTable value="#{visitasMB.visitas}" var="v" styleClass="table">
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Visitantes" />
+				</f:facet>
+				<h:outputText value="#{v}" />
+			</h:column>
+		</h:dataTable>
+	</h:form>
+</h:body>
+</html>
